@@ -13,11 +13,11 @@ Use ZoomLiga.wo
 Use cligaDataDictionary.dd
 
 Object oSelectLiga is a cWebView
-    Set psCaption to "Liga"
+    Set psCaption to "Ligas"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
-    Set pbShowCaption to False
+    Set pbShowCaption to True
     Set piMaxWidth to 1024
 
     Object oliga_DD is a cligaDataDictionary

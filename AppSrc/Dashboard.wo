@@ -59,7 +59,7 @@ Object oDashboard is a cWebView
     
                 Procedure OnLoad
                     Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
-                                     '<div class="Tile_Title">Welcome</div>' +;
+                                     '<div class="Tile_Title">¡Hola!</div>' +;
                                      '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;
                                      '</div>')
                 End_Procedure
