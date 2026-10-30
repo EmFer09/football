@@ -14,7 +14,7 @@ Use cjugadorDataDictionary.dd
 
 Object oZoomJugador is a cWebView
     Set piColumnCount to 12
-    Set psCaption to "ZoomJugador"
+    Set psCaption to "Jugador"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtZoom
     Set pbShowCaption to False
@@ -40,29 +40,56 @@ Object oZoomJugador is a cWebView
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object ojugadorNombre is a cWebForm
-            Entry_Item jugador.Nombre
-            Set piColumnSpan to 12
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Nombre"
-        End_Object 
+            Object oJugadorGroup is a cWebGroup
+                Set piColumnCount to 12
+    
+                Object ojugadorNombre is a cWebForm
+                    Entry_Item jugador.Nombre
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 0
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Nombre"
+                End_Object 
+        
+                Object ojugadorApellido is a cWebForm
+                    Entry_Item jugador.Apellido
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 6
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Apellido"
+                End_Object 
+            End_Object
+        
+        
+        Object oJugadorInfoGroup is a cWebGroup
+            Set piColumnCount to 12
+            
+                Object oJugadorNacionalidad is a cWebForm
+                    Entry_Item jugador.Nacionalidad
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 0
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Nacionalidad"
+                End_Object 
+                
+                Object oEquipoLiga is a cWebForm
+                    Entry_Item liga.Nombre
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 6
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Liga"
+                End_Object 
+                
+                Object oEquipoNombre is a cWebForm
+                    Entry_Item equipo.Nombre
+                    Set piColumnSpan to 12
+                    Set piColumnIndex to 0
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Equipo"
+                End_Object 
 
-        Object ojugadorApellido is a cWebForm
-            Entry_Item jugador.Apellido
-            Set piColumnSpan to 12
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Apellido"
-        End_Object 
-
-        Object ojugadorNacionalidad is a cWebForm
-            Entry_Item jugador.Nacionalidad
-            Set piColumnSpan to 12
-            Set piColumnIndex to 0
-            Set peLabelPosition to lpTop
-            Set psLabel to "Nacionalidad"
-        End_Object 
+                
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

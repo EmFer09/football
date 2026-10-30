@@ -13,11 +13,11 @@ Use ZoomPosicion.wo
 Use cposicionDataDictionary.dd
 
 Object oSelectPosicion is a cWebView
-    Set psCaption to "SelectPosicion"
+    Set psCaption to "Posiciones"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
-    Set pbShowCaption to False
+    Set pbShowCaption to True
     Set piMaxWidth to 1024
 
     Object oposicion_DD is a cposicionDataDictionary
@@ -37,7 +37,7 @@ Object oSelectPosicion is a cWebView
 
         Object oposicionNombre is a cWebColumn
             Entry_Item posicion.Nombre
-            Set psCaption to "posicion.Nombre"
+            
             Set piWidth to 747
         End_Object 
 

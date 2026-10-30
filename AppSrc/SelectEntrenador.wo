@@ -15,7 +15,7 @@ Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
 
 Object oSelectEntrenador is a cWebView
-    Set psCaption to "SelectEntrenador"
+    Set psCaption to "Entrenador"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
@@ -41,24 +41,32 @@ Object oSelectEntrenador is a cWebView
         Set psCSSClass to "MobileList"
         Set pbServerOnRowClick to True
         Set pbFillHeight to True
-        Set pbShowHeader to False
+        Set pbShowHeader to True
         Set piSortColumn to 0
+        
 
         Object oentrenadorNombre is a cWebColumn
             Entry_Item entrenador.Nombre
-            Set psCaption to "entrenador.Nombre"
+            Set psCaption to "Nombre"
             Set piWidth to 896
+         
         End_Object 
 
         Object oentrenadorApellido is a cWebColumn
             Entry_Item entrenador.Apellido
-            Set psCaption to "entrenador.Apellido"
+            Set psCaption to "Apellido"
             Set piWidth to 896
         End_Object 
 
         Object oentrenadorNacionalidad is a cWebColumn
             Entry_Item entrenador.Nacionalidad
-            Set psCaption to "entrenador.Nacionalidad"
+            Set psCaption to "Nacionalidad"
+            Set piWidth to 896
+        End_Object 
+        
+        Object oEquipoNomnre is a cWebColumn
+            Entry_Item equipo.Nombre
+            Set psCaption to "Equipo"
             Set piWidth to 747
         End_Object 
 
