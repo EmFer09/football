@@ -21,7 +21,6 @@ Object oSelectEntrenador is a cWebView
     Set piColumnCount to 12
     Set pbShowCaption to False
     Set piMaxWidth to 1024
-
     Object oliga_DD is a cligaDataDictionary
     End_Object 
 
