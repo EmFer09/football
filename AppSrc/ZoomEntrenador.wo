@@ -77,6 +77,8 @@ Object oZoomEntrenador is a cWebView
                     Set psLabel to "Equipo"
                 End_Object  
                 
+                
+                
           End_Object 
     End_Object
     
