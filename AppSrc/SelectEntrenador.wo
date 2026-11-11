@@ -64,7 +64,7 @@ Object oSelectEntrenador is a cWebView
             Set piWidth to 896
         End_Object 
         
-        Object oEquipoNomnre is a cWebColumn
+        Object oEquipoNombre is a cWebColumn
             Entry_Item equipo.Nombre
             Set psCaption to "Equipo"
             Set piWidth to 747

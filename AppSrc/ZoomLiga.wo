@@ -7,8 +7,10 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
+Use cWebButton.pkg
 
 Use cligaDataDictionary.dd
+Use cequipoDataDictionary.dd
 
 Object oZoomLiga is a cWebView
     Set piColumnCount to 12
@@ -19,18 +21,24 @@ Object oZoomLiga is a cWebView
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
 
-    Object oliga_DD is a cligaDataDictionary
+    Object oLiga_DD is a cligaDataDictionary
     End_Object 
 
     Set Main_DD To oliga_DD
     Set Server  To oliga_DD
+
+    //Añado el data dictionary de Equipo con la restricción de que solo muestre los equipos que pertenecen a la liga consultada
+    Object oEquipo_DD is a cequipoDataDictionary
+        Set DDO_Server to oLiga_DD
+        Set Constrain_File to liga.File_Number
+    End_Object
 
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object oligaNombre is a cWebForm
+        Object oLigaNombre is a cWebForm
             Entry_Item liga.Nombre
             Set piColumnSpan to 6
             Set piColumnIndex to 0
@@ -38,7 +46,7 @@ Object oZoomLiga is a cWebView
             Set psLabel to "Nombre"
         End_Object 
 
-        Object oligaPais is a cWebForm
+        Object oLigaPais is a cWebForm
             Entry_Item liga.Pais
             Set piColumnSpan to 6
             Set piColumnIndex to 6
@@ -46,13 +54,44 @@ Object oZoomLiga is a cWebView
             Set psLabel to "Pais"
         End_Object 
 
-        Object oligaEquipos is a cWebForm
+        Object oLigaEquipos is a cWebForm
             Entry_Item liga.Equipos
             Set piColumnSpan to 12
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Equipos"
         End_Object 
+        
+        //Añado un botón que muestre los equipos que pertenecen a esa liga (from parent to child)
+        Object oEquiposBoton is a cWebButton
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set peLabelPosition to lpTop
+            Set psCaption to "Equipos en esta liga" 
+            
+            WebRegisterPath ntNavigateForward oSelectEquipo
+            
+            Procedure OnClick
+                Send NavigatePath
+            End_Procedure
+        End_Object
+        
+        //Ahora muestro una lista de equipos que pertenecen a la liga seleccionada
+        Object oEquiposLista is a cWebList
+            Set Server to oEquipo_DD
+            Set piColumnSpan to 12
+            Set piColumnIndex to 0
+            Set psCSSClass to "MobileList"
+            Set pbFillHeight to True
+            Set pbShowHeader to True
+            
+            Object oEquipoNombre is a cWebColumn
+                Entry_Item equipo.Nombre
+                Set psCaption to "Equipo"
+                Set piWidth to 500
+            End_Object
+                        
+        End_Object
     End_Object 
 
     Object oActionGroup is a cWebMenuGroup

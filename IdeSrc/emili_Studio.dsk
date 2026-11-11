@@ -7,8 +7,72 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=3
+SelectedTab=2
 [Window0]
+Filename=Workspace Dashboard
+ViewType=101
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+TabIndex=0
+TabGroup=0
+[Window1]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEntrenador.wo
+ViewType=1
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+CursorLine=0
+CursorColumn=0
+TabIndex=4
+TabGroup=0
+[Window2]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectPosicion.wo
+ViewType=1
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+CursorLine=19
+CursorColumn=29
+TabIndex=5
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEquipo.wo
+ViewType=1
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+CursorLine=0
+CursorColumn=0
+TabIndex=6
+TabGroup=0
+[Window4]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectLiga.wo
+ViewType=1
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+CursorLine=0
+CursorColumn=0
+TabIndex=7
+TabGroup=0
+[Window5]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEntrenador.wo
+ViewType=1
+Top=31
+Left=0
+Bottom=1048
+Right=2150
+CursorLine=0
+CursorColumn=0
+TabIndex=8
+TabGroup=0
+[Window6]
 Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
 ViewType=1
 Top=31
@@ -19,54 +83,25 @@ CursorLine=0
 CursorColumn=0
 TabIndex=1
 TabGroup=0
-[Window1]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomEntrenador.wo
+[Window7]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectJugador.wo
 ViewType=1
 Top=31
 Left=0
 Bottom=1048
 Right=2150
-CursorLine=0
-CursorColumn=0
-TabIndex=2
+CursorLine=88
+CursorColumn=9
+TabIndex=3
 TabGroup=0
-[Window2]
-Filename=Workspace Dashboard
-ViewType=101
-Top=31
-Left=0
-Bottom=1048
-Right=2150
-TabIndex=0
-TabGroup=0
-[Window3]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\SelectEntrenador.wo
-ViewType=1
-Top=31
-Left=0
-Bottom=1048
-Right=2150
-CursorLine=22
-CursorColumn=26
-TabIndex=4
-TabGroup=0
-[Window4]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\ZoomJugador.wo
-ViewType=102
-Top=31
-Left=0
-Bottom=1048
-Right=2150
-TabIndex=5
-TabGroup=0
-[Window5]
+[Window8]
 Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashboard.wo
 ViewType=1
 Top=31
 Left=0
 Bottom=1048
 Right=2150
-CursorLine=0
-CursorColumn=0
-TabIndex=3
+CursorLine=75
+CursorColumn=62
+TabIndex=2
 TabGroup=0

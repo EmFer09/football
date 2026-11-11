@@ -24,18 +24,18 @@ Object oZoomEquipo is a cWebView
     End_Object 
 
     Object oequipo_DD is a cequipoDataDictionary
-        Set DDO_Server To oliga_DD
+        Set DDO_Server to oLiga_DD
     End_Object 
 
-    Set Main_DD To oequipo_DD
-    Set Server  To oequipo_DD
+    Set Main_DD to oEquipo_DD
+    Set Server  to oEquipo_DD
 
 
     Object oWebMainPanel is a cWebPanel
         Set piColumnCount to 12
         WebSetResponsive piColumnCount rmMobile to 4
 
-        Object oequipoNombre is a cWebForm
+        Object oEquipoNombre is a cWebForm
             Entry_Item equipo.Nombre
             Set piColumnSpan to 6
             Set piColumnIndex to 0
@@ -43,12 +43,20 @@ Object oZoomEquipo is a cWebView
             Set psLabel to "Equipo"
         End_Object 
         
+        //Áñado una función para poder navegar desde la lupa en "Liga" cuando se pulsa el lápiz a todas las ligas (SelectLiga) (FromChild)
         Object oLigaNombre is a cWebForm
             Entry_Item liga.Nombre
             Set piColumnSpan to 6
             Set piColumnIndex to 6
             Set peLabelPosition to lpTop
             Set psLabel to "Liga"
+            Set pbPromptButton to True
+            
+            WebRegisterPath ntNavigateForward oSelectLiga
+            
+            Procedure OnPrompt
+                Send NavigatePath
+            End_Procedure
         End_Object
         
     End_Object 

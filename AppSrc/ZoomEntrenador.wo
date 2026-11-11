@@ -19,16 +19,16 @@ Object oZoomEntrenador is a cWebView
     Set peViewType to vtZoom
     Set Verify_Save_Msg to 0
     Set piMaxWidth to 1024
-    Set pbShowCaption to False
+    Set pbShowCaption to False 
 
-    Object oliga_DD is a cligaDataDictionary
+    Object oLiga_DD is a cligaDataDictionary
     End_Object 
 
-    Object oequipo_DD is a cequipoDataDictionary
+    Object oEquipo_DD is a cequipoDataDictionary
         Set DDO_Server To oliga_DD
     End_Object 
 
-    Object oentrenador_DD is a centrenadorDataDictionary
+    Object oEntrenador_DD is a centrenadorDataDictionary
         Set DDO_Server To oequipo_DD
     End_Object 
 
@@ -75,9 +75,39 @@ Object oZoomEntrenador is a cWebView
                     Set piColumnIndex to 6
                     Set peLabelPosition to lpTop
                     Set psLabel to "Equipo"
+                    Set pbPromptButton to True
+                    Set pbServerOnPrompt to True
+                    
+                    WebRegisterPath ntNavigateForward oSelectEquipo
+                    
+                    Procedure OnPrompt
+                        Send NavigatePath
+                    End_Procedure          
                 End_Object  
                 
+                // añado la columna "Liga" para que salga el nombre de la liga a la que pertenece su equipo
+                Object oEntrenadorLiga is a cWebForm
+                    Entry_Item liga.Nombre
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 0
+                    Set peLabelPosition to lpTop
+                    Set psLabel to "Liga"
+                End_Object 
                 
+                //Creo un botón para navegar hasta la vista de equipos que se vea debajo del equipo al que pertenece el entrenador
+                Object oVerEquipo is a cWebButton
+                    Set piColumnSpan to 6
+                    Set piColumnIndex to 6
+                    Set peLabelPosition to lpTop
+                    Set psCaption to "Ver equipos"
+                    
+                    WebRegisterPath ntNavigateForwardCustom oSelectEquipo
+                    
+                    Procedure OnClick
+                        Send NavigatePath
+                    End_Procedure
+                    
+                End_Object
                 
           End_Object 
     End_Object

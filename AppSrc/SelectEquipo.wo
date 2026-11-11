@@ -61,7 +61,7 @@ Object oSelectEquipo is a cWebView
             Set psBtnCssClass to "WebButtonIcon WebIcon_Info"
             Set peAlign to alignRight
 
-            WebRegisterPath ntNavigateForward oZoomEquipo
+            WebRegisterPath ntNavigateForward oZoomEquipo //Al haber creado antes los Zoom con el wizard la navegación Select a Zoom ya está hecha en todas las vistas Select
 
             Procedure OnClick
                 Send NavigatePath
@@ -80,7 +80,7 @@ Object oSelectEquipo is a cWebView
             Get GetNavigateData to NavigateData
 
             Case Begin
-                Case (NavigateData.eNavigateType = nfFromParent)
+                Case (NavigateData.eNavigateType = nfFromParent) //Navegación from parent to child
                     Send NavigateForward of oZoomEquipo Self
                     Case Break
 
