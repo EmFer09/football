@@ -74,6 +74,11 @@
 				<DDClass>
 					<className>cWebAppSessionDataDictionary</className>
 					<classFile>cWebAppSessionDataDictionary.dd</classFile>
+					<preferred>false</preferred>
+				</DDClass>
+				<DDClass>
+					<className>cWebAppSessionDataDictionary2</className>
+					<classFile>cWebAppSessionDataDictionary2.dd</classFile>
 					<preferred>true</preferred>
 				</DDClass>
 			</DDClasses>

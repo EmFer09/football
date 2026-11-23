@@ -1,0 +1,104 @@
+/* Hoja de estilos para FutbolWebApp */
+
+:root {
+    --color-texto: #97b770;
+    --color-cabecera: #688334;
+    --color-breadcrumbs: #97b770;
+}
+
+/* colores y ajustes de las tiles */
+.Tile .WebCon_Sizer {
+    background-color: #ABCA7E ;
+    border-radius: 10px;
+    outline: 2px solid #97b770;
+}
+
+.Tile .WebCon_Sizer,
+.Tile .WebCon_Sizer * {
+    color: var(--color-texto);
+}
+
+.Tile .Tile_Title {
+    font-weight: bold;
+}
+
+/* ajustes a la cabecera */
+.HeaderPanel,
+.HeaderPanel .WebCon_Sizer {
+    background-color: var(--color-cabecera);
+    color: var(--color-texto);
+}
+.MenuPanel,
+.MenuPanel .WebCon_Sizer,
+.CaptionPanel,
+.CaptionPanel .WebCon_Sizer {
+    background-color: var(--color-cabecera);
+    color: var(--color-texto);
+}
+
+/*breadcrumb de arriba*/
+.CaptionPanel div.WebCrumb_Caption,
+.CaptionPanel ul.WebCrumbs,
+.CaptionPanel ul.WebCrumbs li {
+    background-color: var(--color-cabecera) !important;
+}
+
+/*breadcrumbs del segundo header */
+ul.WebCrumbs,
+.BreadcrumbPanel ul.WebCrumbs {
+    background-color: var(--color-breadcrumbs) !important;
+}
+
+/* "Dashboard" */
+div.WebCrumb_Caption {
+    background-color: var(--color-breadcrumbs) !important;
+    color: var(--color-texto)!important;
+}
+
+/*la flecha del breadcrumb*/
+ul.WebCrumbs li,{
+    color: var(--color-texto);
+    background-color: var(--color-breadcrumbs);
+}
+
+
+li.WebCrumb_Item div.WebCrumb_Arrow {
+    border-color: var(--color-cabecera);
+    border-right-color: var(--color-cabecera) !important;
+    background-color: transparent !important;
+}
+
+li.WebCrumb_Item div.WebCrumb_Arrow::before,
+li.WebCrumb_Item div.WebCrumb_Arrow::after {
+    border-left-color: var(--color-cabecera) !important;
+    background-color: transparent !important;
+}
+
+/* texto de la cabecera */
+.HeaderPanel * {
+    color: var(--color-texto);
+}
+
+/* hamburguesa*/
+.MenuPanel button::before {
+    color: var(--color-texto) !important;
+    border-color: var(--color-texto) !important;
+}
+
+/* iconos de la barra de arriba: tres puntos, etc */
+.WebItm_Icon::before {
+    color: var(--color-breadcrumbs) !important;
+    border-color: var(--color-texto) !important;
+}
+
+/*botones en las vistas select y zoom */
+.WebButton button {
+    background-color: var(--color-cabecera) !important;
+    color: var(--color-texto) !important;
+}
+
+/* fila seleccionada de select */
+table.WebList_Row.WebList_Selected {
+    background-color: #dfe9cf !important;   
+    border-left-color: var(--color-cabecera) !important;
+}
