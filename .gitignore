@@ -6,3 +6,5 @@ IdeSrc/Workspace.loc
 
 Programs/WebApp.exe
 Programs/WebApp.log
+
+Data/*.cch
