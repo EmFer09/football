@@ -3,3 +3,6 @@ AppSrc/LoginEncryptionKey.inc
 
 # Data error al add
 IdeSrc/Workspace.loc
+
+Programs/WebApp.exe
+Programs/WebApp.log
