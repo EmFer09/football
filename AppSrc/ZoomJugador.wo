@@ -66,7 +66,8 @@ Object oZoomJugador is a cWebView
         Object oJugadorInfoGroup is a cWebGroup
             Set piColumnCount to 12
             
-                Object oJugadorNacionalidad is a cWebForm
+                // cambio el tipo de WebForm para que se muestre como un desplegable con todas las nacionalidades para que el usuario elija (same en ZoomEntrenador)
+                Object oJugadorNacionalidad is a cWebCombo
                     Entry_Item jugador.Nacionalidad
                     Set piColumnSpan to 6
                     Set piColumnIndex to 0

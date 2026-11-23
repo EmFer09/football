@@ -61,7 +61,7 @@ Object oZoomEntrenador is a cWebView
                     Set psLabel to "Apellido"
                 End_Object 
         
-                Object oEntrenadorNacionalidad is a cWebForm
+                Object oEntrenadorNacionalidad is a cWebCombo
                     Entry_Item entrenador.Nacionalidad
                     Set piColumnSpan to 6
                     Set piColumnIndex to 0
@@ -94,10 +94,26 @@ Object oZoomEntrenador is a cWebView
                     Set psLabel to "Liga"
                 End_Object 
                 
-                //Creo un botón para navegar hasta la vista de equipos que se vea debajo del equipo al que pertenece el entrenador
-                Object oVerEquipo is a cWebButton
+                // botón "Despedir" para dejar un entrenador sin equipo
+                Object oDespedir is a cWebButton
                     Set piColumnSpan to 6
                     Set piColumnIndex to 6
+                    Set peLabelPosition to lpTop
+                    Set psCaption to "Despedir"
+                    
+                    Procedure onClick
+                        Forward Send OnClick
+                        Send Clear of oequipo_DD
+                        Send Request_Save of oEntrenador_DD
+                        
+                    End_Procedure
+                    
+                End_Object
+                
+                //Creo un botón para navegar hasta la vista de equipos que se vea debajo del equipo al que pertenece el entrenador
+                Object oVerEquipo is a cWebButton
+                    Set piColumnSpan to 12
+                    Set piColumnIndex to 0
                     Set peLabelPosition to lpTop
                     Set psCaption to "Ver equipos"
                     

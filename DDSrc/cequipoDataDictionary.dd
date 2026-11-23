@@ -13,6 +13,8 @@ Class cequipoDataDictionary is a DataDictionary
 
         Set Add_Server_File to liga.File_Number
 
+        Set CascadeDeleteAllowed liga.File_Number to False
+
         Set Add_Client_File to entrenador.File_Number
         Set Add_Client_File to jugador.File_Number
 
@@ -21,6 +23,52 @@ Class cequipoDataDictionary is a DataDictionary
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
 
+        Set Key_Field_State Field equipo.ID to True
+
+        Set Field_Option Field equipo.Nombre DD_REQUIRED to True
+        Set Field_Option Field equipo.Nombre DD_COMMIT to True
+
+        Set Field_Option Field equipo.LigaID DD_REQUIRED to True
+
     End_Procedure
+
+    // Cambiar a un entrenador de equipo, que el cambio también afecte los contadores de número de equipos en cada liga
+    Procedure Backout
+        Forward Send Backout
+ 
+        Integer iEquipos // para guardar el número de equipos antes de hacer los cambios
+  
+        Move liga.Equipos to iEquipos // lee el número de equipos en ese momento (después de hacer el forward send)
+
+        If (iEquipos > 0) Begin
+            Decrement iEquipos
+            Move iEquipos to liga.Equipos // lee el nuevo valor con el valor restado del total
+        End
+        Else Begin
+            Send UserError "No se puede quitar ningún equipo más" "ERROR" // para recoger el fallo en el caso de que iEquipos < 0
+        End    
+    End_Procedure
+    
+    // después de restar el equipo a la liga original, hay que sumarlo al contador de la nueva liga, siempre que no se pase del límite de equipos por liga
+    Procedure Update
+        Forward Send Update
+       
+        Integer iEquipos
+        Integer iEquiposMax
+        
+        Move liga.Equipos to iEquipos
+        Move liga.EquiposMax to iEquiposMax
+        
+        If (iEquipos < iEquiposMax) Begin
+            Increment iEquipos
+            Move iEquipos to liga.Equipos
+        End
+        Else Begin
+            Send UserError "Esa liga ha llegado al límite de equipos máximo, no admite más equipos" "ERROR"
+        End
+        
+        
+    End_Procedure
+
 
 End_Class

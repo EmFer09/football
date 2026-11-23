@@ -3,6 +3,10 @@
 Open entrenador
 Open equipo
 
+Object oNacionalidadTable is a CodeValidationTable
+    Set Type_Value to "NACION"
+End_Object
+
 Class centrenadorDataDictionary is a DataDictionary
     
     Procedure Construct_Object
@@ -11,11 +15,34 @@ Class centrenadorDataDictionary is a DataDictionary
 
         Set Add_Server_File to equipo.File_Number
 
+        Set CascadeDeleteNull equipo.File_Number to True
+
+        Set ParentNullAllowed equipo.File_Number to True
+
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
         Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
 
+        Set Key_Field_State Field entrenador.ID to True
+
+        Set Field_Option Field entrenador.Nombre DD_COMMIT to True
+        Set Field_Option Field entrenador.Nombre DD_REQUIRED to True
+
+        Set Field_Option Field entrenador.Apellido DD_COMMIT to True
+        Set Field_Option Field entrenador.Apellido DD_REQUIRED to True
+
+        Set Field_Value_Table Field entrenador.Nacionalidad to oNacionalidadTable
+
     End_Procedure
+
+    // para que la tabla admita que un entrenador tenga valor null en equipo y al hacer click en "Despedir" se guarde el cambio
+    Procedure Attach_Main_File
+        Forward Send Attach_Main_File
+        If (Entrenador.EquipoID = 0) Begin
+            Set_Attribute DF_FIELD_IS_NULL of Entrenador.File_Number (RefTable(Entrenador.EquipoID)) to True
+        End
+    End_Procedure
+
 
 End_Class

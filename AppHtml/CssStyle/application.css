@@ -1,7 +1,7 @@
 /* Hoja de estilos para FutbolWebApp */
 
 :root {
-    --color-texto: #fafbf7;
+    --color-texto: #97b770;
     --color-cabecera: #688334;
     --color-breadcrumbs: #97b770;
 }
@@ -87,7 +87,7 @@ li.WebCrumb_Item div.WebCrumb_Arrow::after {
 
 /* iconos de la barra de arriba: tres puntos, etc */
 .WebItm_Icon::before {
-    color: var(--color-texto) !important;
+    color: var(--color-breadcrumbs) !important;
     border-color: var(--color-texto) !important;
 }
 
